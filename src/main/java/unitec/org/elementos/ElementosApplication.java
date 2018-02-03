@@ -16,7 +16,7 @@ public class ElementosApplication implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        Mensajitos n = new Mensajitos ("primero","holaa");
+       /* Mensajitos n = new Mensajitos ("primero","holaa");
         //repoMensa.save(n);
         
         //Probaremos el de buscbar todos
@@ -35,6 +35,6 @@ public class ElementosApplication implements CommandLineRunner {
         repoMensa.save(new Mensajitos(1,"otro","malo"));
         
         //borrar
-        repoMensa.delete(1);
+        repoMensa.delete(1);*/
     }
 }
