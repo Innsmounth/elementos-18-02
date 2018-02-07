@@ -7,25 +7,33 @@ import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.ValoTheme;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+//aqui debe inicializarce algo pero ni puta idea
 
 
 
 @SpringUI
 @Theme ("valo")
 public class MiUI extends UI {
-
-    @Autowired RepositorioMensajitos repoMensa;
+//public Textfield t1
+    //public integer id
+    
+    
+    @Autowired 
+    RepositorioMensajitos repoMensa;
+    
     @Override
     protected void init(VaadinRequest request) {
         //Agregaremos un layout vertical y dentro de el las componentes
         //que quedaran en order decendete
         VerticalLayout layout=new VerticalLayout();
-        Label e1 = new Label("Label");
+        Label e1 = new Label("Prueba");
         e1.addStyleName(ValoTheme.LABEL_H1);
         
         //boton 
@@ -47,6 +55,8 @@ public class MiUI extends UI {
         
         List<Mensajitos> mensajitos = (List<Mensajitos>) repoMensa.findAll();
 // Create a grid bound to the list
+//Si no Sirve quita el comentario largo
+
 Grid<Mensajitos> grid = new Grid<>();
 grid.setItems(mensajitos);
 grid.addColumn(Mensajitos::getId).setCaption("ID");
@@ -56,5 +66,27 @@ layout.addComponent(grid);
         
         setContent(layout);
     }
+ //Si algo no sirve borra esta parte
+  /*class MiVentana extends Window
+  {
+        public MiVentana ()
+        {
+            super("Actualizar o Borrar");
+            center();
+            VerticalLayout v12 = new VerticalLayout ();
+            TextField t1 = new TextField();
+            TextField t2 = new TextField();
+            
+            Button boton = new Button ("Si salio");
+            
+            
+            
+        
+        }
+  
+  
+  }*/
+    
     
 }
+
